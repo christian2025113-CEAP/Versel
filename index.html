@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>augusto</title>
+    <title>Professor Augusto | Vercel</title>
+
+    <style>
+        /* 1. Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 2. Estilo da Página (Cor e Fonte) */
+        body {
+            /* Cor de fundo branca e limpa, como a Apple */
+            background-color: #ffffff;
+            /* Fonte limpa e moderna (usando a fonte do sistema, se disponível) */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1d1d1f; /* Cor de texto escuro da Apple */
+            /* Altura mínima para ocupar toda a tela, se o conteúdo for pequeno */
+            min-height: 100vh; 
+            /* Centraliza o conteúdo no meio da tela (o segredo do minimalismo) */
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            flex-direction: column; /* Organiza os itens em coluna */
+        }
+
+        /* 3. Estilo dos Títulos (Tipografia e Espaço) */
+        .hero-title {
+            /* Fonte maior e mais fina para o título principal (como um título de produto) */
+            font-size: 48px; 
+            font-weight: 600; /* Semi-Bold/Medium */
+            margin-bottom: 8px; /* Espaço em branco após o título */
+        }
+
+        .hero-subtitle {
+            /* Fonte um pouco menor, peso mais leve, com cor levemente diferente */
+            font-size: 24px;
+            font-weight: 400; /* Regular/Leve */
+            color: #6e6e73; /* Cinza suave para contraste sutil */
+            margin-bottom: 40px; /* Grande espaço para o "negative space" da Apple */
+        }
+
+        /* 4. Elementos Adicionais (Botão de Ação) */
+        .cta-button {
+            text-decoration: none;
+            background-color: #007aff; /* Azul clássico da Apple para CTAs */
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 980px; /* Bordas super arredondadas (Pill shape) */
+            font-size: 17px;
+            font-weight: 400;
+            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+        }
+
+        .cta-button:hover {
+            background-color: #005bb5; /* Escurece um pouco ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
-    <center>
-        <h1>Site Vercel</h1>
-        
-    </center>
-</body>
+    <h1 class="hero-title">Site Vercel</h1>
+    <h2 class="hero-subtitle">Professor Augusto - Seu Portal de Conhecimento</h2>
 
+    <a href="#" class="cta-button">Ver Conteúdo Agora</a>
+</body>
 </html>
