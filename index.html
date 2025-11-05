@@ -3,69 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Augusto | Vercel</title>
-
+    <title>Professor Augusto | O Paradigma Quântico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* 1. Reset Básico */
+        /* 1. Reset e Tipografia Global */
+        :root {
+            --cor-primaria: #007aff; /* Azul para CTAs e Destaques */
+            --cor-fundo: #ffffff; /* Branco Limpo */
+            --cor-texto-principal: #1d1d1f; /* Preto Quase Absoluto */
+            --cor-texto-suave: #6e6e73; /* Cinza Suave */
+            --font-principal: 'Poppins', sans-serif;
+            --espaco-g: 80px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* 2. Estilo da Página (Cor e Fonte) */
         body {
-            /* Cor de fundo branca e limpa, como a Apple */
-            background-color: #ffffff;
-            /* Fonte limpa e moderna (usando a fonte do sistema, se disponível) */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #1d1d1f; /* Cor de texto escuro da Apple */
-            /* Altura mínima para ocupar toda a tela, se o conteúdo for pequeno */
-            min-height: 100vh; 
-            /* Centraliza o conteúdo no meio da tela (o segredo do minimalismo) */
-            display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            flex-direction: column; /* Organiza os itens em coluna */
+            font-family: var(--font-principal);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.6;
         }
 
-        /* 3. Estilo dos Títulos (Tipografia e Espaço) */
+        /* 2. Barra de Navegação (Header) */
+        header {
+            width: 100%;
+            padding: 20px var(--espaco-g);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Fundo transparente com um toque de desfoque (como a Apple) */
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px); 
+            position: fixed; /* Fixa no topo */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--cor-texto-principal);
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--cor-texto-suave);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--cor-texto-principal);
+        }
+        
+        /* 3. Seção Principal (Hero Section) - Minimalismo no Centro */
+        .hero {
+            /* Altura total da janela para máximo impacto visual */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px; /* Compensa a barra fixa */
+        }
+
         .hero-title {
-            /* Fonte maior e mais fina para o título principal (como um título de produto) */
-            font-size: 48px; 
-            font-weight: 600; /* Semi-Bold/Medium */
-            margin-bottom: 8px; /* Espaço em branco após o título */
+            /* Título grande e fino (peso 600) */
+            font-size: 64px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            max-width: 800px;
         }
 
         .hero-subtitle {
-            /* Fonte um pouco menor, peso mais leve, com cor levemente diferente */
-            font-size: 24px;
-            font-weight: 400; /* Regular/Leve */
-            color: #6e6e73; /* Cinza suave para contraste sutil */
-            margin-bottom: 40px; /* Grande espaço para o "negative space" da Apple */
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--cor-texto-suave);
+            margin-bottom: 40px;
+            max-width: 600px;
         }
 
-        /* 4. Elementos Adicionais (Botão de Ação) */
+        /* 4. Botão CTA (Call to Action) - Formato Pílula */
         .cta-button {
+            display: inline-block;
             text-decoration: none;
-            background-color: #007aff; /* Azul clássico da Apple para CTAs */
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 980px; /* Bordas super arredondadas (Pill shape) */
-            font-size: 17px;
-            font-weight: 400;
-            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo);
+            padding: 12px 28px;
+            border-radius: 50px; /* Bordas super arredondadas */
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .cta-button:hover {
-            background-color: #005bb5; /* Escurece um pouco ao passar o mouse */
+            background-color: #005bb5;
+            transform: translateY(-2px); /* Efeito sutil de elevação */
         }
+
+        /* 5. Seção de Destaque (Explicação do Qubit) */
+        .section-highlight {
+            padding: var(--espaco-g) 100px;
+            background-color: #f5f5f7; /* Um cinza muito claro para contraste suave */
+            text-align: center;
+        }
+
+        .section-highlight h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-highlight p {
+            font-size: 20px;
+            color: var(--cor-texto-suave);
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Estilo da citação (para o "Poder Exponencial") */
+        .quote {
+            font-style: italic;
+            color: var(--cor-texto-principal);
+            border-left: 4px solid var(--cor-primaria);
+            padding-left: 15px;
+            margin-top: 30px;
+            display: inline-block;
+            font-size: 22px;
+        }
+        
+        /* 6. Responsividade (Layout para Celulares) */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                display: none; /* Oculta o menu para simplificar em telas pequenas */
+            }
+
+            .hero-title {
+                font-size: 40px;
+                padding: 0 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+                padding: 0 20px;
+            }
+
+            .section-highlight {
+                padding: 40px 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <h1 class="hero-title">Site Vercel</h1>
-    <h2 class="hero-subtitle">Professor Augusto - Seu Portal de Conhecimento</h2>
+    <header>
+        <a href="#" class="logo">Professor Augusto</a>
+        <nav>
+            <a href="#">Qubit & Superposição</a>
+            <a href="#">O Enlace (Embaraço)</a>
+            <a href="#">Aplicações</a>
+            <a href="#">Sobre</a>
+        </nav>
+    </header>
 
-    <a href="#" class="cta-button">Ver Conteúdo Agora</a>
+    <section class="hero">
+        <h1 class="hero-title">O Paradigma Quântico</h1>
+        <h2 class="hero-subtitle">Professor Augusto - Desvendando as Fronteiras da Ciência para a Próxima Geração.</h2>
+        <a href="#" class="cta-button">Acesse o Módulo Q: Introdução</a>
+    </section>
+
+    <section class="section-highlight">
+        <h3>A Magia do Qubit e a Superposição</h3>
+        <p>A unidade básica da computação quântica, o **Qubit** (Bit Quântico), se aproveita de um fenômeno da Mecânica Quântica chamado **Superposição**. Diferente do bit clássico (0 ou 1), o Qubit pode ser 0, 1 e *ambos* ao mesmo tempo!</p>
+        
+        <div class="quote">
+            🤯 **O Poder Exponencial:** 10 Qubits em superposição podem armazenar simultaneamente $2^{10}$ (ou 1024) estados de informação.
+        </div>
+    </section>
+    
+    <footer>
+        </footer>
+
 </body>
 </html>
