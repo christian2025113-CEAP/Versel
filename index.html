@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Augusto | O Paradigma Quântico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Professor Augusto | Vertebrados e Invertebrados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* 1. Reset e Tipografia Global */
+        /* Variáveis CSS para Cores e Fontes */
         :root {
-            --cor-primaria: #007aff; /* Azul para CTAs e Destaques */
-            --cor-fundo: #ffffff; /* Branco Limpo */
-            --cor-texto-principal: #1d1d1f; /* Preto Quase Absoluto */
-            --cor-texto-suave: #6e6e73; /* Cinza Suave */
-            --font-principal: 'Poppins', sans-serif;
-            --espaco-g: 80px;
+            --cor-primaria: #4CAF50; /* Verde vibrante para o tema natureza */
+            --cor-secundaria: #2196F3; /* Azul para detalhes */
+            --cor-fundo: #f8f8f8; /* Fundo cinza claro */
+            --cor-texto-principal: #333;
+            --cor-texto-secundario: #555;
+            --font-principal: 'Montserrat', sans-serif;
+            --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --transicao-suave: all 0.3s ease;
         }
 
+        /* Reset Básico */
         * {
             margin: 0;
             padding: 0;
@@ -28,174 +32,271 @@
             background-color: var(--cor-fundo);
             color: var(--cor-texto-principal);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* 2. Barra de Navegação (Header) */
+        /* Header / Barra de Navegação */
         header {
-            width: 100%;
-            padding: 20px var(--espaco-g);
+            background-color: #fff;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* Fundo transparente com um toque de desfoque (como a Apple) */
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px); 
-            position: fixed; /* Fixa no topo */
+            box-shadow: var(--sombra-card);
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 1.8em;
             font-weight: 700;
+            color: var(--cor-primaria);
             text-decoration: none;
-            color: var(--cor-texto-principal);
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 10px;
+            color: var(--cor-secundaria);
         }
 
-        nav a {
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
             margin-left: 30px;
-            text-decoration: none;
-            color: var(--cor-texto-suave);
-            font-weight: 400;
-            transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--cor-texto-principal);
+        nav ul li a {
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            font-weight: 600;
+            transition: var(--transicao-suave);
         }
-        
-        /* 3. Seção Principal (Hero Section) - Minimalismo no Centro */
+
+        nav ul li a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Hero Section (Seção Principal) */
         .hero {
-            /* Altura total da janela para máximo impacto visual */
-            min-height: 100vh;
+            height: 70vh; /* Altura da viewport */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1547407131-402652b1b36e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+            color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 100px; /* Compensa a barra fixa */
+            padding: 0 20px;
         }
 
-        .hero-title {
-            /* Título grande e fino (peso 600) */
-            font-size: 64px;
-            font-weight: 600;
-            margin-bottom: 12px;
+        .hero h1 {
+            font-size: 3.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero h4 {
+            font-size: 1.5em;
+            font-weight: 400;
             max-width: 800px;
+            margin-bottom: 30px;
         }
 
-        .hero-subtitle {
-            font-size: 28px;
-            font-weight: 300;
-            color: var(--cor-texto-suave);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        /* 4. Botão CTA (Call to Action) - Formato Pílula */
         .cta-button {
             display: inline-block;
-            text-decoration: none;
             background-color: var(--cor-primaria);
-            color: var(--cor-fundo);
-            padding: 12px 28px;
-            border-radius: 50px; /* Bordas super arredondadas */
-            font-size: 18px;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: var(--transicao-suave);
         }
 
         .cta-button:hover {
-            background-color: #005bb5;
-            transform: translateY(-2px); /* Efeito sutil de elevação */
+            background-color: #388E3C; /* Verde mais escuro */
+            transform: translateY(-2px);
+            box-shadow: var(--sombra-card);
         }
 
-        /* 5. Seção de Destaque (Explicação do Qubit) */
-        .section-highlight {
-            padding: var(--espaco-g) 100px;
-            background-color: #f5f5f7; /* Um cinza muito claro para contraste suave */
+        /* Seção de Conteúdo Principal - Cards */
+        .content-section {
+            padding: 80px 5%;
             text-align: center;
         }
 
-        .section-highlight h3 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .section-highlight p {
-            font-size: 20px;
-            color: var(--cor-texto-suave);
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-        }
-
-        /* Estilo da citação (para o "Poder Exponencial") */
-        .quote {
-            font-style: italic;
+        .content-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
             color: var(--cor-texto-principal);
-            border-left: 4px solid var(--cor-primaria);
-            padding-left: 15px;
-            margin-top: 30px;
-            display: inline-block;
-            font-size: 22px;
+            position: relative;
         }
-        
-        /* 6. Responsividade (Layout para Celulares) */
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--cor-primaria);
+            border-radius: 2px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: var(--sombra-card);
+            overflow: hidden;
+            text-align: left;
+            transition: var(--transicao-suave);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--cor-primaria);
+        }
+
+        .card-content p {
+            font-size: 1.1em;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: var(--cor-secundaria);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transicao-suave);
+        }
+
+        .card-link:hover {
+            color: #1976D2; /* Azul mais escuro */
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 0.9em;
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
             header {
+                flex-direction: column;
                 padding: 15px 20px;
             }
-
-            nav {
-                display: none; /* Oculta o menu para simplificar em telas pequenas */
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
             }
 
-            .hero-title {
-                font-size: 40px;
-                padding: 0 20px;
+            .hero h1 {
+                font-size: 2.5em;
             }
-
-            .hero-subtitle {
-                font-size: 20px;
-                padding: 0 20px;
+            .hero h4 {
+                font-size: 1.2em;
             }
-
-            .section-highlight {
-                padding: 40px 20px;
+            .content-section {
+                padding: 50px 5%;
+            }
+            .content-section h2 {
+                font-size: 2em;
+            }
+            .card-container {
+                grid-template-columns: 1fr;
             }
         }
-
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Professor Augusto</a>
+        <a href="#" class="logo"><i class="fas fa-microscope"></i> Professor Augusto</a>
         <nav>
-            <a href="#">Qubit & Superposição</a>
-            <a href="#">O Enlace (Embaraço)</a>
-            <a href="#">Aplicações</a>
-            <a href="#">Sobre</a>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#vertebrados">Vertebrados</a></li>
+                <li><a href="invertebrados.html">Invertebrados</a></li> <li><a href="#">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="hero-title">O Paradigma Quântico</h1>
-        <h2 class="hero-subtitle">Professor Augusto - Desvendando as Fronteiras da Ciência para a Próxima Geração.</h2>
-        <a href="#" class="cta-button">Acesse o Módulo Q: Introdução</a>
+    <section class="hero" id="inicio">
+        <h1>Vertebrados e Invertebrados</h1>
+        <h4>Venha conhecer esses animais incríveis e maravilhosos, desde as menores criaturas aos gigantes do nosso planeta.</h4>
+        <a href="#explorar" class="cta-button">Explore o Reino Animal</a>
     </section>
 
-    <section class="section-highlight">
-        <h3>A Magia do Qubit e a Superposição</h3>
-        <p>A unidade básica da computação quântica, o **Qubit** (Bit Quântico), se aproveita de um fenômeno da Mecânica Quântica chamado **Superposição**. Diferente do bit clássico (0 ou 1), o Qubit pode ser 0, 1 e *ambos* ao mesmo tempo!</p>
-        
-        <div class="quote">
-            🤯 **O Poder Exponencial:** 10 Qubits em superposição podem armazenar simultaneamente $2^{10}$ (ou 1024) estados de informação.
+    <section class="content-section" id="explorar">
+        <h2>Escolha seu Reino</h2>
+        <div class="card-container">
+            <div class="card" onclick="location.href='vertebrados.html';">
+                <img src="https://images.unsplash.com/photo-1549417277-c99054700d11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="Leão, um vertebrado">
+                <div class="card-content">
+                    <h3>Vertebrados</h3>
+                    <p>Descubra os animais com coluna vertebral: peixes, anfíbios, répteis, aves e mamíferos. Suas estruturas, adaptações e diversidade.</p>
+                    <a href="vertebrados.html" class="card-link">Explorar Vertebrados <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card" onclick="location.href='invertebrados.html';">
+                <img src="https://images.unsplash.com/photo-1517457223030-24900cb29f9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="Água-viva, um invertebrado">
+                <div class="card-content">
+                    <h3>Invertebrados</h3>
+                    <p>Aprenda sobre o grupo mais diverso do reino animal: insetos, aracnídeos, moluscos, crustáceos e muito mais. Um mundo sem ossos!</p>
+                    <a href="invertebrados.html" class="card-link">Explorar Invertebrados <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </section>
-    
+
     <footer>
-        </footer>
+        <p>&copy; 2023 Professor Augusto. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
