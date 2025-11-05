@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertebrados Detalhado | Portal da Zoologia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Variáveis CSS (As mesmas do index.html) */
+        :root {
+            --cor-primaria: #4CAF50; 
+            --cor-secundaria: #2196F3; 
+            --cor-fundo: #f8f8f8; 
+            --cor-texto-principal: #333;
+            --cor-texto-secundario: #555;
+            --font-principal: 'Montserrat', sans-serif;
+            --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --transicao-suave: all 0.3s ease;
+            --espacamento-secao: 80px 5%;
+        }
+
+        /* Reset e Estilos Gerais (Copiar do index.html) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-principal); background-color: var(--cor-fundo); color: var(--cor-texto-principal); line-height: 1.7; }
+        header { background-color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--sombra-card); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8em; font-weight: 700; color: var(--cor-primaria); text-decoration: none; display: flex; align-items: center; }
+        .logo i { margin-right: 10px; color: var(--cor-secundaria); }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: var(--cor-texto-secundario); font-weight: 600; transition: var(--transicao-suave); }
+        nav ul li a:hover, nav ul li a.ativo { color: var(--cor-primaria); }
+        footer { background-color: #333; color: #fff; text-align: center; padding: 30px 5%; font-size: 0.9em; }
+
+        /* Hero Específico da Página (Invertebrados) */
+        .hero-invertebrados {
+            height: 50vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549615553-96b658d55d28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center/cover no-repeat;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-invertebrados h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero-invertebrados h4 {
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+
+        /* Seção de Conteúdo Detalhado */
+        .secao-detalhe {
+            padding: var(--espacamento-secao);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .secao-detalhe h2 {
+            font-size: 2.2em;
+            color: var(--cor-primaria);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--cor-secundaria);
+            font-weight: 600;
+        }
+
+        /* Bloco de Filo */
+        .filo-bloco {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: var(--sombra-card);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .filo-bloco:nth-child(odd) {
+            flex-direction: row-reverse; 
+        }
+        
+        .filo-bloco h3 {
+            font-size: 1.8em;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .filo-imagem {
+            flex-shrink: 0; 
+            width: 350px;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .filo-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .filo-bloco:hover .filo-imagem img {
+            transform: scale(1.05);
+        }
+
+        .lista-caracteristicas {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .lista-caracteristicas li {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        /* Responsividade (incluído aqui para completude) */
+        @media (max-width: 900px) {
+            .filo-bloco { flex-direction: column; align-items: center; }
+            .filo-bloco:nth-child(odd) { flex-direction: column; }
+            .filo-imagem { width: 100%; height: 200px; }
+        }
+        @media (max-width: 768px) {
+             .hero-invertebrados h1 { font-size: 2.5em; }
+             .hero-invertebrados h4 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-microscope"></i> O Biólogo</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="vertebrados.html">Vertebrados</a></li>
+                <li><a href="#" class="ativo">Invertebrados</a></li> 
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-invertebrados">
+        <h1>Invertebrados</h1>
+        <h4>Portal da Zoologia: A diversidade esmagadora da vida, olhe esses animais incríveis sem coluna vertebral.</h4>
+    </section>
+
+    <section class="secao-detalhe">
+        <h2>O Mundo sem Ossos: Os Filos Mais Diversos</h2>
+        <p>Os invertebrados representam cerca de **97% de todas as espécies animais** e dominam quase todos os ecossistemas do planeta. Sua classificação é complexa, mas focaremos nos filos mais representativos e essenciais para a biologia animal.</p>
+        
+        <div class="filo-bloco" id="artropodes">
+            <div class="filo-imagem">
+                <img src="https://images.unsplash.com/photo-1510258509495-927b2a6886e8?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Borboleta em uma flor">
+            </div>
+            <div>
+                <h3>1. Artrópodes (Arthropoda)</h3>
+                <p>O filo mais numeroso do planeta (incluindo insetos, aracnídeos e crustáceos). Caracterizam-se por terem **exoesqueleto de quitina** e **patas articuladas**.</p>
+                <strong>Características Detalhadas:</strong>
+                <ul class="lista-caracteristicas">
+                    <li>**Corpo:** Segmentado (cabeça, tórax, abdômen).</li>
+                    <li>**Estrutura:** Exoesqueleto rígido (necessitam de muda - ecdise).</li>
+                    <li>**Classes:** Insetos (6 patas), Aracnídeos (8 patas), Crustáceos, Quilópodes e Diplópodes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="filo-bloco" id="moluscos">
+            <div class="filo-imagem">
+                <img src="https://images.unsplash.com/photo-1550974868-87b40092c6c3?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Caracol em uma folha">
+            </div>
+            <div>
+                <h3>2. Moluscos (Mollusca)</h3>
+                <p>O segundo maior filo. Incluem animais de corpo mole, muitos dos quais possuem conchas calcárias (ostras, caramujos) e outros com alto nível de inteligência (polvos, lulas).</p>
+                <strong>Características Detalhadas:</strong>
+                <ul class="lista-caracteristicas">
+                    <li>**Corpo:** Mole e não segmentado.</li>
+                    <li>**Manto:** Dobra de pele que secreta a concha.</li>
+                    <li>**Classes:** Gastrópodes (caracóis), Bivalves (ostras), Cefalópodes (polvos).</li>
+                </ul>
+            </div>
+        </div>
+        
+        </section>
+
+    <footer>
+        <p>&copy; 2023 Portal da Zoologia | Biologia Simplificada. Conhecimento sobre Invertebrados.</p>
+    </footer>
+
+</body>
+</html>
