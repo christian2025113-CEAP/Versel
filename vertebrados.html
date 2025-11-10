@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertebrados Detalhado | Professor Augusto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <title>Vertebrados | Explicação Detalhada - Doctor Christian and Nicolas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Variáveis CSS (As mesmas da página inicial) */
+        /* Manter o mesmo CSS da página principal para consistência */
         :root {
-            --cor-primaria: #4CAF50; /* Verde vibrante para o tema natureza */
-            --cor-secundaria: #2196F3; /* Azul para detalhes */
-            --cor-fundo: #f8f8f8; /* Fundo cinza claro */
-            --cor-texto-principal: #333;
-            --cor-texto-secundario: #555;
-            --font-principal: 'Montserrat', sans-serif;
-            --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.08);
-            --transicao-suave: all 0.3s ease;
-            --espacamento-secao: 80px 5%;
+            --cor-primaria: #0077b6;
+            --cor-secundaria: #00b4d8;
+            --cor-fundo: #f8f9fa;
+            --cor-texto: #343a40;
+            --cor-destaque: #90e0ef;
         }
 
-        /* Reset Básico */
         * {
             margin: 0;
             padding: 0;
@@ -29,287 +22,209 @@
         }
 
         body {
-            font-family: var(--font-principal);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
             background-color: var(--cor-fundo);
-            color: var(--cor-texto-principal);
-            line-height: 1.7; /* Aumentado para melhor leitura */
         }
 
-        /* Header / Barra de Navegação (Repetição do estilo anterior) */
         header {
-            background-color: #fff;
-            padding: 15px 5%;
+            background-color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: var(--sombra-card);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
+        .logo h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             color: var(--cor-primaria);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+            letter-spacing: 1px;
         }
-        .logo i {
-            margin-right: 10px;
-            color: var(--cor-secundaria);
-        }
-
+        
+        /* Estilos de Navegação (CORRIGIDO) */
         nav ul {
             list-style: none;
             display: flex;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 20px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: var(--cor-texto-secundario);
-            font-weight: 600;
-            transition: var(--transicao-suave);
-        }
-
-        nav ul li a:hover, nav ul li a.ativo {
             color: var(--cor-primaria);
-        }
-
-        /* Hero Específico da Página (Vertebrados) */
-        .hero-vertebrados {
-            height: 50vh; 
-            /* Imagem de fundo temática para Vertebrados (ex: floresta/montanha) */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516259024628-9842a2082269?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-vertebrados h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
             font-weight: 700;
+            padding: 5px 10px;
+            transition: color 0.3s;
         }
 
-        .hero-vertebrados h4 {
-            font-size: 1.3em;
-            font-weight: 400;
-        }
-
-        /* Seção de Conteúdo Detalhado */
-        .secao-detalhe {
-            padding: var(--espacamento-secao);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .secao-detalhe h2 {
-            font-size: 2.2em;
-            color: var(--cor-primaria);
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--cor-secundaria);
-            font-weight: 600;
-        }
-
-        /* Bloco de Classe (Ex: Peixes, Mamíferos) */
-        .classe-bloco {
-            background-color: #fff;
-            padding: 30px;
-            margin-bottom: 40px;
-            border-radius: 10px;
-            box-shadow: var(--sombra-card);
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-        }
-
-        .classe-bloco:nth-child(even) {
-            flex-direction: row-reverse; /* Inverte a ordem para um visual dinâmico */
-        }
-        
-        .classe-bloco h3 {
-            font-size: 1.8em;
+        nav ul li a:hover {
             color: var(--cor-secundaria);
-            margin-bottom: 15px;
+            border-bottom: 2px solid var(--cor-secundaria);
+        }
+
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-primaria);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--cor-destaque);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-secundaria);
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .section-text strong {
+            color: var(--cor-primaria);
             font-weight: 700;
         }
 
-        .classe-imagem {
-            flex-shrink: 0; /* Não permite que a imagem encolha */
-            width: 350px;
-            height: 250px;
-            border-radius: 8px;
-            overflow: hidden;
+        .key-points {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
         }
 
-        .classe-imagem img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .classe-bloco:hover .classe-imagem img {
-            transform: scale(1.05);
-        }
-
-        .lista-caracteristicas {
-            margin-top: 15px;
-            padding-left: 20px;
-        }
-        
-        .lista-caracteristicas li {
+        .key-points li {
+            background: #e9f5ff;
             margin-bottom: 8px;
-            font-size: 1.05em;
+            padding: 10px 15px;
+            border-left: 4px solid var(--cor-secundaria);
+            font-size: 1rem;
         }
 
-        /* Footer (Repetição do estilo anterior) */
-        footer {
-            background-color: #333;
-            color: #fff;
+        .image-container {
             text-align: center;
-            padding: 30px 5%;
-            font-size: 0.9em;
+            margin: 2rem 0;
         }
 
-        /* Responsividade */
-        @media (max-width: 900px) {
-            .classe-bloco {
-                flex-direction: column;
-                align-items: center;
-            }
-            .classe-bloco:nth-child(even) {
-                flex-direction: column; /* Volta para a ordem normal em telas pequenas */
-            }
-            .classe-imagem {
-                width: 100%;
-                height: 200px;
-            }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        @media (max-width: 768px) {
-            /* Outras regras de responsividade se aplicam aqui */
+        
+        /* Botão de Retorno */
+        .back-link {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .back-link a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border: 2px solid var(--cor-primaria);
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link a:hover {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--cor-texto);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
-    
+
     <header>
-        <a href="index.html" class="logo"><i class="fas fa-microscope"></i> Professor Augusto</a>
+        <div class="logo">
+            <h2>Doctor Christian and Nicolas</h2>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#" class="ativo">Vertebrados</a></li> 
-                <li><a href="invertebrados.html">Invertebrados</a></li> 
-                <li><a href="#">Contato</a></li>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="vertebrados.html">Vertebrados</a></li>
+                <li><a href="invertebrados.html">Invertebrados</a></li>
             </ul>
         </nav>
-    </header>
+        </header>
 
-    <section class="hero-vertebrados">
-        <h1>Vertebrados</h1>
-        <h4>A espinha dorsal da vida na Terra: animais incríveis e maravilhosos.</h4>
-    </section>
-
-    <section class="secao-detalhe">
-        <h2>Características Gerais e Classificação</h2>
-        <p>Os vertebrados formam um subfilo do filo Chordata, caracterizados primariamente pela presença de uma **coluna vertebral (espinha dorsal)**. Essa estrutura interna, juntamente com o crânio, oferece suporte e proteção ao sistema nervoso central, permitindo grande mobilidade e o desenvolvimento de corpos maiores. Eles são divididos em cinco grandes classes:</p>
+    <section class="content-section">
+        <center>
+            <h1>Vertebrados: A Conquista da Estrutura Axial</h1>
+        </center>
         
-        <div class="classe-bloco" id="peixes">
-            <div class="classe-imagem">
-                <img src="https://images.unsplash.com/photo-1530281691515-38c378037380?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Peixe em um recife">
+        <div class="section-text">
+            <p>Os **Vertebrados** (Subfilo Vertebrata) representam o grupo animal mais complexo e evolutivamente avançado, compreendendo cerca de 69.000 espécies. Eles são definidos pela presença de uma **coluna vertebral** (formada por vértebras) e um **crânio**, estruturas que protegem o sistema nervoso central. Esta característica permitiu a evolução de organismos de grande porte e com sofisticadas capacidades sensoriais e motoras.</p>
+            
+            <p>A evolução do endosqueleto ósseo ou cartilaginoso permitiu que os vertebrados crescessem continuamente e desenvolvessem eficientes estratégias de locomoção e predação, o que os levou a dominar ambientes terrestres, aquáticos e aéreos. O grupo inclui classes essenciais como Peixes, Anfíbios, Répteis, Aves e Mamíferos.</p>
+            
+            <h3>Características Biológicas Fundamentais</h3>
+            <hr>
+            
+            <ul class="key-points">
+                <li>**Endosqueleto Interno:** Esqueleto de suporte que cresce com o organismo, em oposição ao exoesqueleto dos Artrópodes.</li>
+                <li>**Sistema Nervoso Avançado:** Cérebro altamente desenvolvido, protegido pelo crânio, e medula espinhal protegida pela coluna vertebral.</li>
+                <li>**Sistema Circulatório Fechado:** O sangue circula inteiramente dentro de vasos, garantindo transporte eficiente de oxigénio e nutrientes.</li>
+                <li>**Simetria Bilateral:** Corpo bem definido com duas metades espelhadas.</li>
+            </ul>
+
+            <h3>As Cinco Classes Clássicas</h3>
+            <hr>
+
+            <h4>1. Peixes (Pisces)</h4>
+            <p>O grupo mais diverso de vertebrados. Caracterizados pela respiração **branquial**, corpo coberto por escamas (na maioria) e utilização de **nadadeiras** para locomoção. O estudo dos peixes é fundamental para a compreensão da origem da coluna vertebral. 
+
+[Image of diverse fish species]
+</p>
+
+            <h4>2. Anfíbios (Amphibia)</h4>
+            <p>Animais de vida dupla (aquática e terrestre). Passam por metamorfose, com larvas aquáticas (girinos) e adultos terrestres. Sua pele permeável os torna altamente sensíveis às mudanças ambientais e são indicadores da saúde ecológica.</p>
+
+            <h4>3. Répteis (Reptilia) e Aves (Aves)</h4>
+            <p>Os Répteis (cobras, lagartos, tartarugas) foram os primeiros a conquistar definitivamente o ambiente terrestre, graças ao seu **ovo amniótico** e pele queratinizada. As **Aves** são os únicos animais com **penas**, caracterizadas pela endotermia (sangue quente) e ossos pneumáticos (ocos) que facilitam o voo.</p>
+            
+            <h4>4. Mamíferos (Mammalia)</h4>
+            <p>O grupo que inclui os seres humanos. Caracterizado pela presença de **glândulas mamárias** (para alimentar os filhotes), **pelos** ou **cabelos** e, na maioria, pela endotermia. Possuem o cérebro mais complexo e estruturas sociais avançadas.</p>
+            
+            <div class="image-container">
+                <img src="https://picsum.photos/seed/vertebras/800/400" alt="Exemplo de Vertebrado de alta complexidade: Um mamífero">
+                <p style="font-style: italic; margin-top: 10px;">Exemplo de Vertebrado: O elefante (Filo Chordata, Classe Mammalia).</p>
             </div>
-            <div>
-                <h3>1. Peixes (Pisces)</h3>
-                <p>Os mais antigos vertebrados, adaptados à vida aquática. Possuem brânquias para respirar e barbatanas para locomoção. Sua pele é geralmente coberta por escamas protetoras.</p>
-                <strong>Características Detalhadas:</strong>
-                <ul class="lista-caracteristicas">
-                    <li>**Habitat:** Exclusivamente aquático (água doce e salgada).</li>
-                    <li>**Respiração:** Branquial.</li>
-                    <li>**Temperatura:** Pecilotérmicos (temperatura corporal varia com o ambiente).</li>
-                </ul>
-            </div>
+
+            <h3>A Coluna Vertebral: A Chave da Predação</h3>
+            <hr>
+            <p>O desenvolvimento da coluna vertebral forneceu um ponto de apoio muscular robusto, essencial para o desenvolvimento de movimentos potentes e rápidos, tornando os Vertebrados os principais predadores em muitos ecossistemas. A sua biologia complexa e estratégias de reprodução garantiram a sua adaptação a quase todos os ambientes extremos do planeta.</p>
+
         </div>
 
-        <div class="classe-bloco" id="anfibios">
-            <div class="classe-imagem">
-                <img src="https://images.unsplash.com/photo-1510258509495-927b2a6886e8?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sapo verde na folha">
-            </div>
-            <div>
-                <h3>2. Anfíbios (Amphibia)</h3>
-                <p>O primeiro grupo a conquistar o ambiente terrestre, mas ainda dependentes da água para a reprodução e para manter a pele úmida. Passam por metamorfose.</p>
-                <strong>Características Detalhadas:</strong>
-                <ul class="lista-caracteristicas">
-                    <li>**Ciclo de Vida:** Larvas aquáticas (girinos) e adultos terrestres.</li>
-                    <li>**Respiração:** Pulmonar, cutânea (pela pele) e branquial (na fase larval).</li>
-                    <li>**Pele:** Lisa, úmida e sem escamas.</li>
-                </ul>
-            </div>
+        <div class="back-link">
+            <a href="index.html">⬅️ Voltar à Página Principal</a>
         </div>
-
-        <div class="classe-bloco" id="repteis">
-            <div class="classe-imagem">
-                <img src="https://images.unsplash.com/photo-1620888921102-3c299e578c74?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tartaruga terrestre">
-            </div>
-            <div>
-                <h3>3. Répteis (Reptilia)</h3>
-                <p>Totalmente adaptados à vida terrestre. Possuem pele seca e grossa, coberta por escamas, placas ou carapaças. A reprodução é feita por ovos com casca protetora.</p>
-                <strong>Características Detalhadas:</strong>
-                <ul class="lista-caracteristicas">
-                    <li>**Pele:** Seca, impermeável, com escamas ou placas.</li>
-                    <li>**Temperatura:** Pecilotérmicos (ectotérmicos).</li>
-                    <li>**Reprodução:** Ovos amnióticos (não precisam de água para se desenvolver).</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="classe-bloco" id="aves">
-            <div class="classe-imagem">
-                <img src="https://images.unsplash.com/photo-1541315622159-86641e779a5e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Águia em voo">
-            </div>
-            <div>
-                <h3>4. Aves (Aves)</h3>
-                <p>Caracterizadas pela presença de penas, bicos (sem dentes) e adaptações para o voo, como ossos ocos e asas. São animais homeotérmicos (de sangue quente).</p>
-                <strong>Características Detalhadas:</strong>
-                <ul class="lista-caracteristicas">
-                    <li>**Cobertura:** Penas, bico córneo, patas com escamas.</li>
-                    <li>**Temperatura:** Homeotérmicos (mantêm a temperatura corporal constante).</li>
-                    <li>**Reprodução:** Ovíparos (botam ovos).</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="classe-bloco" id="mamiferos">
-            <div class="classe-imagem">
-                <img src="https://images.unsplash.com/photo-1546920197-0f8c853af06e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Macaco em uma árvore">
-            </div>
-            <div>
-                <h3>5. Mamíferos (Mammalia)</h3>
-                <p>O grupo mais complexo, distinguido pela presença de pelos, glândulas mamárias (para alimentar os filhotes) e o diafragma. Dominam praticamente todos os habitats terrestres e aquáticos.</p>
-                <strong>Características Detalhadas:</strong>
-                <ul class="lista-caracteristicas">
-                    <li>**Cobertura:** Pelos (geralmente).</li>
-                    <li>**Alimentação dos Filhotes:** Glândulas mamárias.</li>
-                    <li>**Temperatura:** Homeotérmicos.</li>
-                    <li>**Reprodução:** Maioria é vivípara (o embrião se desenvolve no útero).</li>
-                </ul>
-            </div>
-        </div>
-        
     </section>
 
     <footer>
-        <p>&copy; 2023 Professor Augusto. Conhecimento sobre Vertebrados.</p>
+        <p>&copy; 2025 Doctor Christian and Nicolas | Zoologia Moderna</p>
     </footer>
 
 </body>
